@@ -4,6 +4,8 @@
 // Accepts a reference to a synth, 
 // a function that maps midi values to the synth parameter,
 // the parameter of the synth the midi is mapped on to.
+// 
+// upon creating an instance use midiLearn to setup the midi.
 //
 // var name = "ahmet", surname = "kizilay";
 // var email = name + "." + surname + "@" + "gmail.com"
