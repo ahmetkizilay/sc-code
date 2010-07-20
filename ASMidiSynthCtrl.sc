@@ -12,7 +12,7 @@
 
 
 ASMidiSynthControl {
-	var <synth, midiControl, busControl, function, controlParam, isActive;
+	var <synth, midiControl, busControl, function, controlParam, <>isActive;
 	*new {
 		arg a_synth, a_function, a_controlParam;
 		^super.new.pr_init(a_synth, a_function, a_controlParam);
