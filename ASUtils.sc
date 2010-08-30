@@ -1,7 +1,8 @@
 // A Collection of helper methods I find myself in need of
 // 
-// 
-// 
+// Note that I use firefox as the default browser and
+// Emacs as the default SuperCollider Editor.
+// and so should you...
 //
 //
 //
