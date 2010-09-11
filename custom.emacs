@@ -34,3 +34,19 @@
 
 (fset 'sc-init-code
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("Server.default = s = Server.local;s.boot;s.quit;SwingOSC.default.boot;SwingOSC.default.quit;Help.gui;FreqScope.new(500, 200l;" 0 "%d")) arg)))
+
+
+; command: M-x sc-synthdef-template
+; description: inserts a basic synthdef template
+; output:
+; (
+; SynthDef("", {
+; 	arg out = 0;
+; 	var sig;
+; 
+; 	Out.ar(out, sig);
+; }).send(s);
+; )
+
+(fset 'sc-synthdef-template
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("(SynthDef(.esend(s;\", {	arg out = 0;	var sig;	Out.ar(out, sig;" 0 "%d")) arg)))
