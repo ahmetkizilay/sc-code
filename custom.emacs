@@ -1,3 +1,7 @@
+; my emacs defitions file for SuperCollider
+; var name = "ahmet", surname = "kizilay";
+; var email = name + "." + surname + "@" + "gmail.com";
+
 ; you should add a reference to your .emacs file 
 ; (load-file "~/share/SuperCollider/Extensions/custom.emacs")
 
