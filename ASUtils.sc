@@ -28,6 +28,7 @@ ASUtils {
 		arg queryString;
 		var resultList, outputString = "", newBuffer;
 		resultList = Help.search(queryString, true);
+		outputString = "Found" + resultList.size + "results\n\n";
 		resultList.do {
 			arg item;
 			outputString = outputString ++ ("\tdocname: " ++ item.docname ++ "\n");
@@ -39,5 +40,19 @@ ASUtils {
 		newBuffer.insert(outputString);
 		newBuffer.front;
 		^"ok";
+	}
+
+	*askGoogle {
+		arg searchString;
+		var splitted, url;
+		url = "http://www.google.com/search?ie=utf-8&oe=utf-8&q=";
+		splitted = searchString.split($ );
+		splitted.do {
+			arg val;
+			url = url ++ val ++ "+";
+		};
+		url = url.copyFromStart(url.size - 2);
+		("firefox -new-tab \"" ++ url ++ "\"").unixCmd;
+		^"ok";		
 	}
 }
