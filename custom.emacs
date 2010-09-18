@@ -5,6 +5,8 @@
 ; you should add a reference to your .emacs file 
 ; (load-file "~/share/SuperCollider/Extensions/custom.emacs")
 ; if you get kmacro-exec-ring-item error, You should run: M-x load-library <enter> kmacro
+; or add the following reference to your .emacs file
+; (load-library "kmacro")
 
 ; command: M-x sc-play-template
 ; description: inserts basic function template
