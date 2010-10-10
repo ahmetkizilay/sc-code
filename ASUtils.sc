@@ -24,6 +24,18 @@ ASUtils {
 		^"ok";
 	}
 
+	*openHelpInBrowser40 {
+		arg className;
+		("firefox-4.0 -new-tab \"" ++ (className.name ++ ".helpFilePath").interpret ++ "\"").unixCmd;
+		^"ok";
+	}
+
+	*openUrlInBrowser40 {
+		arg url;
+		("firefox-4.0 -new-tab \"" ++ url + "\"").unixCmd;
+		^"ok";
+	}
+
 	*searchInHelp {
 		arg queryString;
 		var resultList, outputString = "", newBuffer;
@@ -53,6 +65,20 @@ ASUtils {
 		};
 		url = url.copyFromStart(url.size - 2);
 		("firefox -new-tab \"" ++ url ++ "\"").unixCmd;
+		^"ok";		
+	}
+
+	*askGoogle40 {
+		arg searchString;
+		var splitted, url;
+		url = "http://www.google.com/search?ie=utf-8&oe=utf-8&q=";
+		splitted = searchString.split($ );
+		splitted.do {
+			arg val;
+			url = url ++ val ++ "+";
+		};
+		url = url.copyFromStart(url.size - 2);
+		("firefox-4.0 -new-tab \"" ++ url ++ "\"").unixCmd;
 		^"ok";		
 	}
 }
