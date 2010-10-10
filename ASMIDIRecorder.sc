@@ -1,12 +1,23 @@
+// ASMIDIRecorder.sc
+// It is a class for recording and playing back a MIDI performance session.
+//
+// Example Usage:
+// m = ASMIDIRecorder.new;
+// m.startRecording;
+// m.stopRecording;
+// m.writeEventsToFile("your file");
+// m.loadMIDIEvents("your file");
+// m.playBackMIDIEvents(speed: 1);
+// m.pausePlayBack;
+// m.resumePlayBack;
+// m.stopPlayBack;
+// m.dispose;
+// 
 // var name = "ahmet", surname = "kizilay";
 // var email = name + "." + surname + "@" + "gmail.com"
 
-// ASMIDIRecorder
-// TempoClock, File, Array
-// action, src, chan, num, val;
-
 ASMIDIRecorder {
-	var <listOfEvents, tempoClock, <isRecording, <isPlaying = false, playBackTask, midiOut;
+	var <listOfEvents, tempoClock, <isRecording = false, <isPlaying = false, playBackTask, midiOut;
 	
 	*new {
 		^super.new.pr_init;
